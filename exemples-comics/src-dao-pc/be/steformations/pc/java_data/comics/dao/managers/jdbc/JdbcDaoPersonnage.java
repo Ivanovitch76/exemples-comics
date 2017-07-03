@@ -16,7 +16,7 @@ public class JdbcDaoPersonnage implements PersonnageManager{
 		super();
 		this.helper = helper;
 	}
-
+	
 	@Override
 	public Personnage getPersonnage(String prenom, String nom) {
 		PersonnageImpl personnage = null;

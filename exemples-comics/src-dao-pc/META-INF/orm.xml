@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+	
+	<named-query name="GetGenreByName">
+		<query>select g from GenreImpl g where lower(g.nom) = lower(?1) </query>
+	</named-query>
+	
+	<!--  classe annotée  -->
+	<entity class="be.steformations.java_data.comics.dao.beans.PersonnageImpl" />
+	<entity class="be.steformations.java_data.comics.dao.beans.GenreImpl"> <!--  @Entity -->
+		<table name="genres"></table> <!-- @Table -->
+		<attributes> <!-- Mappage des propriétés de la classe -->
+			<id name="id"> <!-- @Id -->
+				<column name="num" /> <!-- @Column -->
+			</id>
+			<basic name="nom" /> <!-- @Basic -->
+		</attributes>
+	</entity>
+	
+	<entity class="be.steformations.java_data.comics.dao.beans.AventureImpl" name="Recit">
+		<table name="aventures"></table> <!-- @Table -->
+		<attributes> <!-- Mappage des propriétés de la classe -->	
+			<id name="id"></id>
+			<basic name="titre" /> <!-- @Basic -->
+		</attributes>
+	</entity>					
+	
+</entity-mappings>
